@@ -1,3 +1,7 @@
+cmake -G Ninja -B build -Wno-dev
+
+cmake --build build
+
 ## Lab Work 1: N-Dimensional Template Vector Class
 This repository contains an implementation of a template class for arbitrary-dimension vectors in C++. The implementation fulfills all structural requirements and supports multiple element types, operator overloading, and geometric applications.
 ------------------------------
