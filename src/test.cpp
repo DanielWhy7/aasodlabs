@@ -1,6 +1,7 @@
 import std;
 import linked_list;
 import tasks;
+using std::size_t;
 
 namespace {
 
@@ -20,7 +21,6 @@ bool run_one(const char *name, void (*fn)()) {
   }
 }
 
-/* ---- individual tests ---------------------------------------------- */
 
 void test_default_constructor() {
   linked_list<int> l;
@@ -31,7 +31,7 @@ void test_default_constructor() {
 void test_random_fill_constructor() {
   linked_list<int> l(10, 42u, 1, 100);
   expect(l.size() == 10, "random-fill produces requested count");
-  for (std::size_t i = 0; i < l.size(); ++i)
+  for (size_t i = 0; i < l.size(); ++i)
     expect(l[i] >= 1 && l[i] <= 100, "random values in [1, 100]");
 }
 
@@ -192,9 +192,9 @@ void test_merge_sorted_unique() {
 
   linked_list<int> m = merge_sorted_unique(a, b);
   int exp[] = {1, 2, 3, 4, 5, 7, 8};
-  std::size_t exp_n = sizeof(exp) / sizeof(exp[0]);
+  size_t exp_n = sizeof(exp) / sizeof(exp[0]);
   expect(m.size() == exp_n, "merge size");
-  for (std::size_t i = 0; i < exp_n; ++i)
+  for (size_t i = 0; i < exp_n; ++i)
     expect(m[i] == exp[i], "merge element");
 }
 
