@@ -27,16 +27,17 @@ Two practical problems are solved on top of the class:
 ## Repository layout
 
     .
-    ├── include/
-    │   ├── linked_list.hpp      # LinkedList<T> and Node<T>
-    │   └── tasks.hpp            # declarations of the two task functions
-    ├── src/
-    │   ├── main.cpp             # demo driver: builds lists, runs both tasks
-    │   └── tasks.cpp            # merge_sorted_unique, hanoi
-    ├── tests/                   # optional manual checks
-    ├── LICENSE/                 # gpl3 License
+    ├── CMakeLists.txt
+    ├── CMakePresets.json
     ├── .gitignore
-    └── README.md
+    ├── README.md
+    ├── LICENSE
+    └── src/
+        ├── linked_list.cppm     # linked_list<T> and node<T>   (module interface)
+        ├── tasks.cppm           # tasks module                 (module interface)
+        ├── tasks.cpp            # tasks module                 (implementation)
+        ├── main.cpp             # ▶ program launcher  — has main()
+        └── test.cpp             # ▶ test suite         — has main()
 
 ## Requirements
 

@@ -5,7 +5,7 @@ set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD 451f2fe2-a8a2-47c3-bc32-94786d8fc91b)
 
 project(cpplabs LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 26)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -21,11 +21,15 @@ endif()
 
 add_executable(main)
 
-target_compile_features(main PRIVATE cxx_std_23)
+target_compile_features(main PRIVATE cxx_std_26)
 
 target_sources(main
   PRIVATE
     src/main.cpp
   PRIVATE FILE_SET "modules" TYPE CXX_MODULES FILES
-    src/vector.cppm
+    src/linked_list.cppm
+    src/tasks.cppm
+    src/tasks.cpp
+    src/test.cppm
+    src/test.cpp
 )

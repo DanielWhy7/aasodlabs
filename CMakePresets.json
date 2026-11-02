@@ -53,23 +53,8 @@
         }
     ],
     "buildPresets": [
-        {
-            "name": "linux-debug",
-            "description": "",
-            "displayName": "GCC Build",
-            "configurePreset": "linux-debug"
-        },
-        {
-            "name": "macos-debug",
-            "description": "",
-            "displayName": "Clang Build",
-            "configurePreset": "macos-debug"
-        },
-        {
-            "name": "windows-debug",
-            "description": "",
-            "displayName": "MSVC Build",
-            "configurePreset": "windows-debug"
-        }
+        { "name": "linux-debug",   "configurePreset": "linux-debug"   },
+        { "name": "macos-debug",   "configurePreset": "macos-debug"   },
+        { "name": "windows-debug", "configurePreset": "windows-debug" }
     ]
 }

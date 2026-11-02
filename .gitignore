@@ -1,3 +1,21 @@
+# Build artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.lib
+*.so
 build/
+cmake-build-*/
+lab2
+
+# IDE caches
 .idea/
 .vscode/
+*.user
+*.suo
+
+# Editor temp files
+*~
+*.swp
