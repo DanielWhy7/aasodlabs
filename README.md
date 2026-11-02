@@ -1,5 +1,5 @@
 ## Languages
-English [Russian](README-RU.md) [German](README-DE.md) [Japanese](README-JA.md)
+[English](README.md) [Russian](README-RU.md) [German](README-DE.md) [Japanese](README-JA.md)
 
 # Laboratory Work №2 — Linked Lists (Variant 1, C++26)
 

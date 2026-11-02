@@ -1,3 +1,6 @@
+## Sprachen
+[Englisch](README.md) [Russisch](README-RU.md) [Deutsch](README-DE.md) [Japanisch](README-JA.md)
+
 # Laborarbeit Nr. 2 — Verkettete Listen (Variante 1, C++26)
 
 | Parameter         | Wert                                                           |
