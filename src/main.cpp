@@ -1,7 +1,7 @@
 import std;
 import linked_list;
 import tasks;
-using std::size_t
+using std::size_t;
 
 static linked_list<int> read_sorted_list (const char *prompt){
   linked_list<int> list;
