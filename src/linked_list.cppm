@@ -2,7 +2,6 @@ export module linked_list;
 
 import std;
 
-/* A node of the singly linked circular list. */
 export template <typename T>
 struct node {
   T data;
@@ -14,8 +13,6 @@ struct node {
 export template <typename T>
 class linked_list {
 public:
-  /* Shorthand: inside this class, 'node' alone refers to the template,
-     not to a specialization, so spell it out once here. */
   using node_type = node<T>;
 
   linked_list() : head_(nullptr), tail_(nullptr), size_(0) {

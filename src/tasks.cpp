@@ -33,7 +33,6 @@ linked_list<int> merge_sorted_unique(const linked_list<int> &first,
   return result;
 }
 
-/* ---- Tower of Hanoi (advanced task 3) -------------------------------- */
 
 static void print_disk_field(unsigned int value, bool has_disk) {
   unsigned int printed;

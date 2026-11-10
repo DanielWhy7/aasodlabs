@@ -1,112 +1,110 @@
-**Лабораторная работа №2. Списки.**
+**Laboratory Work No. 2. Lists.**
 
-**Оценка лабораторных работ**
+**Evaluation of Laboratory Works**
 
-Лабораторные работы оцениваются по бинарной шкале \- зачёт / не зачёт. Для допуска к зачету необходимо выполнить все лабораторные работы. Список минимальных требований к работе представлен ниже
+Laboratory works are evaluated on a binary scale — pass / fail. To be admitted to the pass, all laboratory works must be completed. The list of minimum requirements for the work is presented below.
 
-**Минимальные требования**
+**Minimum Requirements**
 
-1\. Код должен компилироваться без предупреждений при максимальном уровне предупреждений. Для компилятора GCC это набор флагов: \-Wall \-Wconversion \-Wextra \-Wpedantic. Для компилятора MSVC (Visual Studio) это флаг /W4. Для других компиляторов согласуйте настройки компиляции с преподавателем.
+1. The code must compile without warnings at the maximum warning level. For the GCC compiler, this is the set of flags: `-Wall -Wconversion -Wextra -Wpedantic`. For the MSVC (Visual Studio) compiler, this is the `/W4` flag. For other compilers, agree on compilation settings with the instructor.
 
-2\. Нельзя использовать глобальные переменные (константы допустимы).
+2. Global variables must not be used (constants are allowed).
 
-3\. В коде должен использоваться только полноценный английский язык (транслит запрещен). Русский язык разрешено использовать только в комментариях.
+3. Only full English must be used in the code (transliteration is prohibited). Russian is allowed only in comments.
 
-4\. Запрещается комментировать каждую строчку кода. Допустим один краткий комментарий на блок кода. Разрешается комментировать одиночную строчку кода, только если она **действительно** делает что-то неожиданное и хитрое (но помните, хитрый код — плохой код\!).
+4. Commenting every line of code is prohibited. One brief comment per code block is allowed. Commenting a single line of code is allowed only if it **really** does something unexpected and tricky (but remember, tricky code is bad code!).
 
-5\. Весь код должен удовлетворять единому стилю программирования. Сам стиль можно выбирать по своему вкусу (см., например,[Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html), [GNU C Style](https://www.gnu.org/prep/standards/html_node/Writing-C.html) и другие). То есть запрещено, например, называть одну функцию в стиле [CamelCase](https://ru.wikipedia.org/w/index.php?title=CamelCase&stable=1), а другую — в стиле [snake\_case](https://ru.wikipedia.org/w/index.php?title=Snake_case&stable=1). Исключение допустимо только для названия функции main. Данные требования предъявляются к любым именуемым сущностям в программе — к функциям, методам, классам, локальным переменным, параметрам функций и методов, названиям файлов и так далее.
+5. All code must satisfy a single programming style. You may choose the style to your taste (see, for example, [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html), [GNU C Style](https://www.gnu.org/prep/standards/html_node/Writing-C.html), and others). That is, it is prohibited, for example, to name one function in [CamelCase](https://ru.wikipedia.org/w/index.php?title=CamelCase&stable=1) style and another in [snake_case](https://ru.wikipedia.org/w/index.php?title=Snake_case&stable=1) style. An exception is allowed only for the name of the `main` function. These requirements apply to any named entities in the program — functions, methods, classes, local variables, function and method parameters, file names, and so on.
 
-6\. Обучающийся предоставляет ссылку на git-репозиторий. может быть локальным (на компьютере в аудитории или ноутбуке обучающегося). Репозиторий не может содержать одинокий коммит с целой лабой, а должен показывать историю работы над лабораторной в виде серии коммитов с содержательными заголовками. В репозитории должен быть корректным образом настроен файл .gitignore (т. е. в репозитории должны находиться только файлы с исходным кодом и файлами проекта, никаких промежуточных и итоговых результатов компиляции в нём быть не должно). 
+6. The student provides a link to a git repository. It may be local (on a computer in the classroom or on the student's laptop). The repository must not contain a single commit with the entire lab; it must show the history of work on the laboratory in the form of a series of commits with meaningful titles. The repository must have a correctly configured `.gitignore` file (i.e., the repository must contain only source code files and project files; there must be no intermediate or final compilation results in it).
 
-Лабораторная работа состоит из 2 частей:
+The laboratory work consists of 2 parts:
 
-\- написания класса согласно варианту;
+- writing a class according to the variant;
+- solving one of the practical tasks using the written class.
 
-\- решения одной из практических задач с помощью написанного класса.
+*You solve a basic or advanced level task of your choice.*
 
-*Решается задача базового или повышенного уровня на ваш выбор.*
+Variants and tasks are distributed according to the table in this file.
 
-Варианты и задачи распределяются согласно таблице в этом файле.
+**General Requirements**
 
-**Общие требования**
+1. In this work, you must not use any STL containers.
 
-1\. В данной работе вы не должны использовать любые контейнеры STL.
+2. The class must be copyable and directly manage the allocated resource.
 
-2\. Класс должен быть копируемым и непосредственно управлять выделяемым ресурсом.
+3. In case of incorrect arguments, exceptions must be thrown via `stdexcept`. Incorrect situations include, for example, accessing a non-existent index, calling an addition operation for two lists of different sizes, and the like.
 
-3\. В случае некорректности аргументов должны кидаться исключения через stdexcept. К некорректным ситуациям относятся, например, обращение по несуществующему индексу, вызов операции сложения для двух списков разного размера и тому подобное.
+4. All input/output must be carried out exclusively through `std::cin` and `std::cout`, without using (explicit or implicit) C-style `stdin` and `stdout` streams.
 
-4\. Весь ввод-вывод должен осуществляться исключительно через std::cin и std::cout, без использования (явного или неявного) си-шных потоков stdin и stdout.
+5. The solutions to the tasks must be located outside the class.
 
-5\. Решение задач должно быть расположено вне класса.
+**General Part.**
 
-**Общая часть.**
+Implement a template class of a linked list **LinkedList** according to your **variant** of the assignment.
 
-Реализовать шаблонный класс связного списка **LinkedList** согласно своему **варианту** задания. 
+Implement an auxiliary structure for representing list elements: **Node.**
 
-Реализовать вспомогательную структуру для представления элементов списка: **Node.**
+The class must implement the following methods:
 
-Класс должен реализовывать следующие методы:
+* Default constructor.
+* Copy constructor.
+* Constructor that fills the list with random values according to the assignment.
 
-* Конструктор по умолчанию.  
-* Конструктор копирования.  
-* Конструктор, заполняющий список случайными значениями согласно заданию.
+*Note: when generating random arrays, set the seed.*
 
-*Примечание: при генерации случайных массивов настраивать зерно-seed*
+* Destructor.
+* Assignment operation.
+* Adding an element to the end of the list — *push_tail*,
+* Adding another **LinkedList** list to the end of the list — *push_tail (overloaded method).*
+* Adding an element to the beginning of the list — *push_head.*
+* Adding a **LinkedList** list to the beginning of the list — *push_head (overloaded method).*
+* Removing an element from the beginning of the list — *pop_heads.*
+* Removing an element from the end of the list — *pop_tails.*
+* Removing all **Node** elements with an information field equal to the passed value — *delete_node.*
+* Index access operation (in two variants for reading/writing). In the case of a circular list variant, take the element modulo (i.e., for any index there is a corresponding list element).
+* List printing operation (overloaded).
 
-* Деструктор.  
-* Операция присваивания.     
-* Добавление элемента в конец списка — *push\_tail*, 	 	  
-* Добавление другого списка **LinkedList** в конец списка — *push\_tail 	(перегруженный метод).*  
-* Добавление элемента в начало списка — *push\_head.*  
-* Добавление списка **LinkedList** в начало списка — *push\_head (перегруженный метод).*  
-* Удаление элемента из начала списка — *pop\_heads.*  
-* Удаление элемента из конца списка — *pop\_tails.*  
-* Удаление всех элементов **Node** с информационным полем, равным переданному — *delete\_node.* 	  
-* Операция доступа по индексу (в двух вариантах 	для чтения/записи). В случае варианта с циклическим списком брать элемент по модулю(т.е. для любого индекса есть соответствующий элемент списка).  
-* Операция вывода списка на печать (перегруженный).
+**List Types:**
 
-**Типы списков:**
+1) Singly linked linear linked list
 
-1\) Односвязный линейный связный список
+2) Doubly linked linear linked list
 
-2\) Двусвязный линейный связный список
+3) Singly linked circular linked list
 
-3\) Односвязный циклический связный список
+4) Doubly linked circular linked list
 
-4\) Двусвязный циклический связный список
+Perform one of the following tasks according to the variant.
 
-Выполнить одно из следующих заданий согласно варианту.
+**Tasks:**
 
-**Задания:**
+***Basic Level***
 
-***Обычный уровень***
+1. Check whether the list contains cycles. Implement output in such a way that even if the list is cyclic, it is printed correctly.
+2. Reverse the list in the opposite direction.
+3. Delete the i-th element from the end of the list.
+4. Implement the function *print_reverse()* to print the list in reverse order.
+5. Find prime numbers in the range [1;N] for an ordered list using the Sieve of Eratosthenes. Implement list output in such a way that only prime numbers are printed.
+6. Find [lucky numbers](https://en.wikipedia.org/wiki/Lucky_number) in the range [1;N] for an ordered list. Implement list output in such a way that only unlucky numbers are printed. **The definition of lucky numbers is given at the link above.**
+7. Implement a music playlist that works in two modes — normal and shuffle playback. The current track must be printed to the console. Control must be performed using the keyboard.
+8. Create two lists of ordered numbers. Merge these two lists so that the sorted order is preserved (the resulting list must not contain duplicates).
+9. Implement an address book of a house as an array containing lists as elements. Each array element represents an apartment, and the list elements are the residents of the apartment. By randomly choosing indices, fill the address book with n elements. Implement printing of the house address book.
 
-1. Проверить, 	есть ли в списке циклы. Реализовать вывод таким образом, что даже если список зацикленный, он выводится корректным образом. 	  
-2. Развернуть список в противоположную сторону.  
-3. Удалите i-тый с конца элемент списка. 	  
-4. Реализуйте функцию *print\_reverse()* вывода списка на печать в обратном порядке. 	  
-5. Найти 	простые числа в диапазоне \[1;N\] для упорядоченного списка с помощью решета Эратосфена. Реализовать вывод списка таким образом, что выводятся только простые числа.  
-6. Найти 	[счастливые числа](https://ru.wikipedia.org/wiki/%D0%A1%D1%87%D0%B0%D1%81%D1%82%D0%BB%D0%B8%D0%B2%D0%BE%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%BE_\(lucky_number\)) в диапазоне \[1;N\] для 	упорядоченного списка. Реализовать 	вывод списка таким образом, что выводятся только несчастливые числа. **Определение счастливых чисел приведено по ссылке выше.**  
-7. Реализовать 	музыкальный плейлист, работающий в двух режимах – обычный и случайное 	воспроизведение. Текущий трек должен 	выводится в консоль. Управление должно 	производится с помощью клавиатуры.   
-8. Создать два списка 	упорядоченных чисел. Объединить два этих списка так, чтобы сохранился отсортированный вид(итоговый список не должен содержать дубликатов) 	  
-9. Реализуйте 	адресную книгу дома в виде массива, содержащего списки в качестве элементов. 	Каждый элемент массива представляет собой квартиру, а элементы списка — жители квартиры. Случайным образом выбирая индексы, заполнить адресную 	книгу n элементами. Реализовать вывод 	адресной книги дома на печать.
+***Advanced Level***
 
-***Повышенный уровень***
+1. Implement a representation of a polynomial as a list. Only non-zero coefficients must be stored. When adding numbers opposite in sign, a zero parameter must not appear. Find the value of the polynomial at a given value of x.
+   *When adding (8x^3+5x+5 and 9x^3 - 5x - 2, the result should be 17x^3 + 3).*
+2. Add and multiply two numbers represented as lists. Numbers do not contain leading zeros, except for the number 0 itself. Test the answer on numbers exceeding the maximum value of int. Implement the print operator so that it demonstrates the correctness of the performed operations.
+3. Solve the [Tower of Hanoi problem](https://en.wikipedia.org/wiki/Tower_of_Hanoi) using three (or two) lists. Implement list output in the form of towers.
+4. Implement a representation of an input path to a non-existent file as a list (Root directory → Folder 1 → … → Folder N → File name). Modify the list so that it points to an existing file in the system, for example, a text file. Restore the path to the file from the list, verify correctness by opening the file. Implement list output in the form of a path to the file.
+5. Implement a function that takes a list as input and computes the next state of an elementary cellular automaton [[1](https://en.wikipedia.org/wiki/Elementary_cellular_automaton),[2](https://habr.com/ru/articles/273393/),[see examples](http://atlas.wolfram.com/01/01/)] operating according to the Wolfram code rule. Implement the print operator in the form of the current state of the cellular automaton. (If desired, you can implement a function to save the result in .pbm, .pgm, or .ppm format [[3](https://en.wikipedia.org/wiki/Netpbm_format)]).
 
-1. Реализовать представление многочлена в виде списка. Храниться должны только ненулевые коэффициенты. При сложении противоположных по знаку чисел не должен появляться нулевой параметр. Найти значение многочлена при заданном значении x.  
-   *При сложении (8x^3+5x+5 и 9x^3 \- 5x \- 2 должен получаться результат 17x^3 \+ 3\)*  
-2. Сложить и умножить два числа, представленных в виде списков. Числа не содержат ведущих нулей, кроме самого числа 0\. Проверить ответ на числах, превышающих максимальное значение int. Реализовать оператор вывода на печать так, чтобы он демонстрировал корректность выполненных операций.  
-3. Решить [задачу о Ханойской башне](https://habr.com/ru/articles/200758/), используя три(или два) списка. Реализовать вывод списка в виде башен.	  
-4. Реализовать 	представление поданного на вход пути к несуществующему файлу в виде 	списка(Корневой каталог → Папка 1 → … → Папка N → Имя файла). Изменить список так, чтобы он указывал 	на существующий в системе файл, например, текстовый. Восстановить путь к файлу из списка, проверить правильность путем 	открытия файла. Реализовать вывод списка на печать в виде пути к файлу.  
-5. Реализовать 	функцию, принимающую на вход список и вычисляющую для него следующее состояние 	элементарного клеточного 	автомата\[[1](https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BB%D0%B5%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82),[2](https://habr.com/ru/articles/273393/),[посмотреть примеры](http://atlas.wolfram.com/01/01/)\], работающего по правилу кода Вольфрама. Реализовать оператор вывода на печать в виде текущего	состояния клеточного автомата.(При желании можно реализовать функцию сохранения результата в формате .pbm, 	.pgm или .ppm\[[3](https://ru.wikipedia.org/wiki/Portable_anymap)\])
+**Distribution of Variants**
 
-     
-    	**Распределение вариантов**
+**THE VARIANT CORRESPONDS TO YOUR NUMBER IN THE INSTRUCTOR'S GRADE SHEET IN THE GOOGLE TABLE (NOT IN YOUR LOCAL ONE)**
 
-   **ВАРИАНТ СООТВЕТСТВУЕТ ВАШЕМУ НОМЕРУ В ВЕДОМОСТИ ПРЕПОДАВАТЕЛЯ В ГУГЛ-ТАБЛИЦЕ (НЕ В ВАШЕЙ ЛОКАЛЬНОЙ)**
-
-| № в списке | Тип списка | № задачи |
+| No. in list | List type | Task No. |
 | :---: | :---: | :---: |
 | **1** | **3** | **(8;3)** |
 | **2** | **3** | **(4;1)** |
@@ -138,4 +136,4 @@
 | **28** | **3** | **(4;1)** |
 | **29** | **1** | **(9;4)** |
 
-В скобках указываются на первом месте если обычный уровень, на втором— повышенный уровень.  
+In parentheses, the first place indicates the basic level, the second — the advanced level.

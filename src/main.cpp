@@ -31,7 +31,7 @@ int main (){
   std::cout << "Enter number of disks: ";
   unsigned int disks;
   std::cin >> disks;
-  hanoi (disks);
+  hanoi(disks);
 
   return 0;
 }
