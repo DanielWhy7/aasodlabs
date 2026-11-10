@@ -3,28 +3,30 @@ import linked_list;
 import tasks;
 using std::size_t;
 
-static linked_list<int> read_sorted_list (const char *prompt){
+static linked_list<int> read_sorted_list(const char *prompt) {
   linked_list<int> list;
   std::cout << prompt;
   size_t count;
   std::cin >> count;
-  for (size_t i = 0; i < count; ++i)
-    {
-      int value;
-      std::cin >> value;
-      list.push_tail (value);
-    }
+  for (size_t i = 0; i < count; ++i) {
+    int value;
+    std::cin >> value;
+    list.push_tail(value);
+  }
   return list;
 }
 
-int main (){
+int main() {
   std::cout << "Task 8: merging two sorted lists without duplicates\n";
-  linked_list<int> list_a
-      = read_sorted_list ("Enter first list (count then values): ");
-  linked_list<int> list_b
-      = read_sorted_list ("Enter second list (count then values): ");
+  linked_list<int> list_a =
+    read_sorted_list("Enter first list (count then values): ");
+  linked_list<int> list_b =
+    read_sorted_list("Enter second list (count then values): ");
+  //linked_list<int> list = {3,4,4,4,4,5,8};
+  //list.delete_node(4);
+  //std::cout << "List: " << list << "\n\n";
 
-  linked_list<int> merged = merge_sorted_unique (list_a, list_b);
+  linked_list<int> merged = merge_sorted_unique(list_a, list_b);
   std::cout << "Merged: " << merged << "\n\n";
 
   std::cout << "Task 3: Tower of Hanoi\n";

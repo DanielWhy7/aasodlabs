@@ -3,11 +3,23 @@ module tasks;
 import std;
 import linked_list;
 
+using std::size_t;
+
+static bool is_sorted (const linked_list<int> &l) {
+  for (size_t i = 1; i < l.size (); ++i)
+    if (l[i - 1] > l[i])
+      return false;
+  return true;
+}
+
 linked_list<int> merge_sorted_unique(const linked_list<int> &first,
                                      const linked_list<int> &second) {
+  if (!is_sorted (first) || !is_sorted (second))
+    throw std::invalid_argument (
+      "merge_sorted_unique: both inputs must be sorted ascending");
   linked_list<int> result;
-  std::size_t i = 0;
-  std::size_t j = 0;
+  size_t i = 0;
+  size_t j = 0;
   bool has_last = false;
   int last_value = 0;
 

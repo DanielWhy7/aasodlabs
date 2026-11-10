@@ -19,19 +19,32 @@ public:
     contract_assert(empty() && head_ == nullptr && tail_ == nullptr);
   }
 
+  linked_list(std::initializer_list<T> init)
+      : head_(nullptr), tail_(nullptr), size_(0) {
+    linked_list tmp;
+    for (const auto &v : init)
+      tmp.push_tail(v);
+    swap(tmp);
+    contract_assert(size_ == init.size());
+  }
+
   linked_list(const linked_list &other)
       : head_(nullptr), tail_(nullptr), size_(0) {
-    copy_from(other);
+    linked_list tmp;
+    tmp.copy_from(other);
+    swap(tmp);
     contract_assert(size_ == other.size_);
   }
 
   linked_list(std::size_t count, unsigned int seed, T min_value, T max_value)
       requires std::integral<T>
       : head_(nullptr), tail_(nullptr), size_(0) {
+    linked_list tmp;
     std::mt19937 engine(seed);
     std::uniform_int_distribution<T> dist(min_value, max_value);
     for (std::size_t i = 0; i < count; ++i)
-      push_tail(dist(engine));
+      tmp.push_tail(dist(engine));
+    swap(tmp);
     contract_assert(size_ == count);
   }
 
@@ -46,7 +59,7 @@ public:
     return *this;
   }
 
-  void swap(linked_list &other) {
+  void swap(linked_list &other) noexcept {
     node_type *tmp_head = head_;
     head_ = other.head_;
     other.head_ = tmp_head;
@@ -198,7 +211,7 @@ private:
     return current;
   }
 
-  void clear() {
+  void clear() noexcept {
     if (empty())
       return;
     node_type *current = head_;
